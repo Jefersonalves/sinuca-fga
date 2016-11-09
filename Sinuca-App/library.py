@@ -11,3 +11,15 @@ def AddTable(world):
      PBa = world.add.aabb(shape=(5, 60), pos=(200, 32), mass='inf')
      PBb = world.add.aabb(shape=(5, 60), pos=(600, 32), mass='inf')
 
+def AddBalls(world, balls):
+	balls.append(Circle(22, pos=pos.from_middle(140, 0), color='random', mass='100'))
+	balls.append(Circle(22, pos=pos.from_middle(180, 20), color='random', mass='100'))
+	balls.append(Circle(22, pos=pos.from_middle(180, -20), color='random', mass='100'))
+	balls.append(Circle(22, pos=pos.from_middle(220,  30), color='random', mass='100'))
+	balls.append(Circle(22, pos=pos.from_middle(220, 0), color='random', mass='100'))
+	balls.append(Circle(22, pos=pos.from_middle(220, -30), color='random', mass='100'))
+	balls.append(Circle(22, pos=pos.from_middle(260, 40), color='random', mass='100'))
+	balls.append(Circle(22, pos=pos.from_middle(260, 20), color='random', mass='100'))
+	balls.append(Circle(22, pos=pos.from_middle(260, -20), color='random', mass='100'))
+	balls.append(Circle(22, pos=pos.from_middle(260, -40), color='random', mass='100'))
+	world.add(balls)
