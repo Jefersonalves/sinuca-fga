@@ -1,5 +1,6 @@
 import sys; sys.path.append('.')
 from library import *
+from WhiteBall import *
 from FGAme import *
 import random
 conf.set_framerate(60)
@@ -11,6 +12,9 @@ world.add.margin(3)
 
 # Cria as bordas da mesa
 AddTable(world)
+
+# Adiciona o placar
+AddPlacar(world)
 
 # Adiciona as bolas
 whiteBall = world.add.circle(25, pos=pos.from_middle(-330, 0), color='white', mass='200')
