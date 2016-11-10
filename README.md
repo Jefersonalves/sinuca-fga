@@ -1,6 +1,8 @@
 Sinuca-Fga
 ================
 
+![alt tag](https://github.com/Jefersonalves/sinuca-fga/tree/master/images/screenshot.png)
+
 Jeferson Alves Ferreira 14/0042709 Edilberto Abraão L. Jr. 14/0038353
 
 O jogo tem como base a sinuca de mesa tradicional, sendo o jogo a simulação física de uma mesa
