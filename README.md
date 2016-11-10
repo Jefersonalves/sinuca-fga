@@ -1,7 +1,7 @@
 Sinuca-Fga
 ================
 
-![alt tag](https://github.com/Jefersonalves/sinuca-fga/tree/master/images/screenshot.png)
+![screenshot](https://cloud.githubusercontent.com/assets/22637533/20184275/42ddaa56-a74f-11e6-83b7-18555971d66f.png)
 
 Jeferson Alves Ferreira 14/0042709 Edilberto Abraão L. Jr. 14/0038353
 
