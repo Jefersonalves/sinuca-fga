@@ -1,6 +1,6 @@
 import sys; sys.path.append('.')
-from library import *
-from WhiteBall import *
+from sinuca_fga.library import *
+from sinuca_fga.WhiteBall import *
 from FGAme import *
 import random
 conf.set_framerate(60)
@@ -58,6 +58,6 @@ def y_vel(pos):
 def exit1():
      exit()
 
-run()
+#run()
 
 
