@@ -1,23 +1,17 @@
 import sys; sys.path.append('.')
-from sinuca_fga.library import *
-from sinuca_fga.Ball import *
-from sinuca_fga.Table import *
-from sinuca_fga.WhiteBall import *
+from library import *
+from Ball import *
+from WhiteBall import *
 from FGAme import *
 import random
 conf.set_framerate(60)
 
-#Adiciona o fundo e a margem da tela
-Back = draw.Circle(800, pos=pos.from_middle(0, 0), color='#32cd32')
-world.add(Back)
-world.add.margin(3)
+#Adiciona o fundo e uma margem para a tela
+conf.set_background('white', image="table10")
+world.add.margin(0)
 
-# Cria as bordas da mesa
+# Cria os limites para as bordas da mesa
 AddTable(world)
-#table = Table()
-#world.add(table)
-# Adiciona o placar
-AddPlacar(world)
 
 # Adiciona as bolas
 whiteBall = WhiteBall()
@@ -25,40 +19,47 @@ world.add(whiteBall)
 balls = []
 AddBalls(world, balls)
 
+# Define o indicador do player da que fará a tacada
+playerturn = world.add.circle(8, pos=(428, 576), color='green', mass = 'inf')
+
 # Define a constante de amortecimento
-world.damping = 1.16
+world.damping = 0.85
 
 # Define as condições que as bolas são encaçapadas
 @listen('frame-enter')
 def ballh():
-     y = 230
-     if (whiteBall.y > 520) | (whiteBall.y < 85):
-          whiteBall.pos = (200,300)
+     y = 258
+     if (whiteBall.x > 758) | (whiteBall.x < 42) | (whiteBall.y > 478) | (whiteBall.y < 122):
+          whiteBall.pos = (220,300)
           whiteBall.vel = (0, 0)
      for ball in balls:
-          if (ball.x > 790) | (ball.x < 10) | (ball.y > 520) | (ball.y < 85):
-             ball.pos = (y,30)
-             ball.vel = (0, 0) 
-             y = y + 35 
+          if (ball.x > 758) | (ball.x < 42) | (ball.y > 478) | (ball.y < 122):
+               ball.pos = (y, 40)
+               ball.vel = (0, 0)
+               y = y + 20
 
 # Definindo os controles para as ações do jogo
 @listen('mouse-button-down', 'left')
 def x_vel(pos):
      world.pause()
-     aux = (pos)
      world.line = draw.Segment(whiteBall.pos, pos)
      world.add(world.line)
-    
+     play("cuehit")
+
 @listen('mouse-button-up', 'left')
 def y_vel(pos):
+     if (playerturn.pos == (428, 576)):
+          playerturn.pos = (428, 553)
+     else:
+          playerturn.pos = (428, 576)
      world.line.linewidth = '0'
      whiteBall.vel = (pos)
      whiteBall.vel -= (whiteBall.pos)
-     whiteBall.vel *= 4
+     whiteBall.vel *= 2
      world.resume()
 
 @listen('key-down', 'e')
 def exit1():
      exit()
 
-#run()
+run()
