@@ -13,6 +13,8 @@ world.add.margin(3)
 # Cria as bordas da mesa
 AddTable(world)
 
+#table = Table()
+#world.add(table)
 # Adiciona o placar
 AddPlacar(world)
 
