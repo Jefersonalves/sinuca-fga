@@ -29,11 +29,11 @@ world.damping = 0.85
 @listen('frame-enter')
 def ballh():
      y = 258
-     if (whiteBall.x > 758) | (whiteBall.x < 42) | (whiteBall.y > 478) | (whiteBall.y < 122):
+     if ((whiteBall.x > 758) or (whiteBall.x < 42) or (whiteBall.y > 478) or (whiteBall.y < 122)):
           whiteBall.pos = (220,300)
           whiteBall.vel = (0, 0)
      for ball in balls:
-          if (ball.x > 758) | (ball.x < 42) | (ball.y > 478) | (ball.y < 122):
+          if ((ball.x > 758) or (ball.x < 42) or (ball.y > 478) or (ball.y < 122)):
                ball.pos = (y, 40)
                ball.vel = (0, 0)
                y = y + 20
