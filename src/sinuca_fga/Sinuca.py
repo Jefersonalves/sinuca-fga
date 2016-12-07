@@ -1,5 +1,7 @@
 import sys; sys.path.append('.')
 from sinuca_fga.library import *
+from sinuca_fga.Ball import *
+from sinuca_fga.Table import *
 from sinuca_fga.WhiteBall import *
 from FGAme import *
 import random
@@ -12,20 +14,19 @@ world.add.margin(3)
 
 # Cria as bordas da mesa
 AddTable(world)
-
 #table = Table()
 #world.add(table)
 # Adiciona o placar
 AddPlacar(world)
 
 # Adiciona as bolas
-whiteBall = world.add.circle(25, pos=pos.from_middle(-330, 0), color='white', mass='200')
+whiteBall = WhiteBall()
+world.add(whiteBall)
 balls = []
 AddBalls(world, balls)
 
 # Define a constante de amortecimento
 world.damping = 1.16
-
 
 # Define as condições que as bolas são encaçapadas
 @listen('frame-enter')
@@ -61,5 +62,3 @@ def exit1():
      exit()
 
 #run()
-
-
