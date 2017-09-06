@@ -1,7 +1,6 @@
-Sinuca-Fga
-================
+># Sinuca-Fga
 
-Jeferson Alves Ferreira 14/0042709 Edilberto Abraão L. Jr. 14/0038353
+O Sinuca-Fga é um repositório criado para as astividades da disciplina Tópicos Especiais em Jogos Digitais
 
 O jogo tem como base a sinuca de mesa tradicional, sendo o jogo a simulação física de uma mesa
 de sinuca real. A mecânica do jogo se define por ser um jogo aonde o jogador define a direção e
